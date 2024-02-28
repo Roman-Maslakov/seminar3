@@ -2,34 +2,28 @@ import java.util.Iterator;
 
 public class WIterator implements Iterator<BaseWorker>{
 
-    int size = ListOfWorkers.workers.length;
+    int size;
 
-    int cursor = 0;
+    int cursor = -1;
 
-    Iterator<BaseWorker> iterator = new Iterator<BaseWorker>() {
+    BaseWorker[] arr;
 
-        @Override
-        public boolean hasNext() {
+    public WIterator(BaseWorker[] arr) {
 
-            return cursor < size;
-        }
-
-        @Override
-        public BaseWorker next() {
-
-            //cursor++;
-            return ListOfWorkers.workers[cursor];
-        }
-    };
-
-    public boolean hasNext() {
-
-        return cursor < size;
+        this.arr = arr;
+        size = arr.length;
     }
 
+    @Override
+    public boolean hasNext() {
+
+        return cursor < size - 1;
+    }
+
+    @Override
     public BaseWorker next() {
 
-        //cursor++;
-        return ListOfWorkers.workers[cursor];
+        cursor++;
+        return arr[cursor];
     }
 }

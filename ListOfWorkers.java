@@ -11,10 +11,15 @@ public class ListOfWorkers implements Iterable<BaseWorker> {
         new Worker("Bulat Voron", 80000),
         new Freelancer("Petya Lakomkin", 500)
     };
+    
+    public Iterator<BaseWorker> iterator() {
+        
+        return new WIterator(workers);
+    }
 
     public static void printList3x() {
 
-        Iterator<BaseWorker> wIterator = Arrays.asList(workers).iterator();
+        Iterator<BaseWorker> wIterator = new WIterator(workers);
 
         Arrays.sort(workers);
 
@@ -32,11 +37,5 @@ public class ListOfWorkers implements Iterable<BaseWorker> {
         while (wIterator.hasNext()) {
             System.out.println(wIterator.next());
         }
-    }
-
-    public Iterator<BaseWorker> iterator() {
-        
-        WIterator it = new WIterator();
-        return it.iterator;
     }
 }
