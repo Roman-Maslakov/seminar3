@@ -14,6 +14,8 @@ public class Program {
 
         System.out.println("\n".repeat(5));
 
-        ListOfWorkers.printList3x();
+        ListOfWorkers lw = new ListOfWorkers();
+
+        lw.printList3x();
     }
 }

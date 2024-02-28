@@ -3,7 +3,7 @@ import java.util.Iterator;
 
 public class ListOfWorkers implements Iterable<BaseWorker> {
     
-    static BaseWorker[] workers = {
+    BaseWorker[] workers = {
         new Worker("Ignat Sveridov", 200000),
         new Freelancer("Timofey Fedotov", 650),
         new Freelancer("Sasha Ivanov", 450),
@@ -17,9 +17,9 @@ public class ListOfWorkers implements Iterable<BaseWorker> {
         return new WIterator(workers);
     }
 
-    public static void printList3x() {
+    public void printList3x() {
 
-        Iterator<BaseWorker> wIterator = new WIterator(workers);
+        Iterator<BaseWorker> wIterator = iterator();
 
         Arrays.sort(workers);
 
